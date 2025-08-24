@@ -1,0 +1,259 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6">
+  <diagram name="Event Storming" id="ejvn2UPIIK09-xdkTZsT">
+    <mxGraphModel dx="1020" dy="993" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9qLHovj2lsrHqXUO13M7-1" value="EVENT STORMING - PLATAFORMA TORNEOS E-SPORTS" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;strokeWidth=3;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="159" y="8" width="510" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-2" value="&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;align=left;" vertex="1" parent="1">
+          <mxGeometry x="34" y="110" width="220" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-3" value="GESTIÓN DE TORNEOS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="49" y="80" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-4" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="304" y="110" width="220" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-5" value="TICKETES Y VENTAS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="319" y="80" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-6" value="&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;/blockquote&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;align=left;" vertex="1" parent="1">
+          <mxGeometry x="574" y="110" width="220" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-7" value="STREAMING Y VISTAS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="589" y="80" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-8" value="&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; color: rgb(171, 178, 191);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;TorneoCreado&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(171, 178, 191);&quot;&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; color: rgb(171, 178, 191);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;CategoriaAsignada&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(171, 178, 191);&quot;&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; color: rgb(171, 178, 191);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;TipoJuegoSeleccionado&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(171, 178, 191);&quot;&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; color: rgb(171, 178, 191);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;ResponsableAsignado&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(171, 178, 191);&quot;&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; color: rgb(171, 178, 191);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;SubAdministradorAñadido&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(171, 178, 191);&quot;&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; color: rgb(171, 178, 191);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;LimiteParticipantesDefinido&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(171, 178, 191);&quot;&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; color: rgb(171, 178, 191);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;EtapaVentaCreada&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(171, 178, 191);&quot;&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; color: rgb(171, 178, 191);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;ParticipanteRegistrado&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(171, 178, 191);&quot;&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; color: rgb(171, 178, 191);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;TorneoConfirmado&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(171, 178, 191);&quot;&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; color: rgb(171, 178, 191);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;TorneoIniciado&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(171, 178, 191);&quot;&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; color: rgb(171, 178, 191);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;ResultadoRegistrado&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;/span&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background-color: rgb(236, 236, 236);&quot;&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;span class=&quot;token&quot; style=&quot;forced-color-adjust: none; color: rgb(171, 178, 191);&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;forced-color-adjust: none; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;TorneoFinalizado&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="44" y="130" width="210" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-9" value="&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;- TicketGenerado&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background-color: rgb(236, 236, 236);&quot;&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;- CodigoQRCreado&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background-color: rgb(236, 236, 236);&quot;&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;- VentaIniciada&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background-color: rgb(236, 236, 236);&quot;&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;- PagoProcessado&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background-color: rgb(236, 236, 236);&quot;&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;- ComisionCalculada&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background-color: rgb(236, 236, 236);&quot;&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;- TicketValidado&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background-color: rgb(236, 236, 236);&quot;&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;- AccesoAutorizado&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; background-color: rgb(236, 236, 236);&quot;&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;- TicketCancelado&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="349" y="150" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-11" value="- VistaCreada&lt;br&gt;- PlataformaIntegrada&amp;nbsp;&lt;div&gt;- TransmisionIniciada&lt;br&gt;- EspectadorUnido&lt;br&gt;- EspectadorDesconectado&lt;br&gt;- TransmisionFinalizada&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- CapacidadLimiteAlcanzada&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="599" y="160" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-12" value="&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;align=left;" vertex="1" parent="1">
+          <mxGeometry x="159" y="410" width="220" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-13" value="MONITOREO Y ALERTAS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="174" y="380" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-14" value="&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(171, 178, 191);&quot; class=&quot;token&quot;&gt;-&lt;/span&gt; MetricaRegistrada&lt;br/&gt;&lt;span style=&quot;color: rgb(171, 178, 191);&quot; class=&quot;token&quot;&gt;-&lt;/span&gt; UmbralSuperado&lt;br/&gt;&lt;span style=&quot;color: rgb(171, 178, 191);&quot; class=&quot;token&quot;&gt;-&lt;/span&gt; AlertaGenerada&lt;br/&gt;&lt;span style=&quot;color: rgb(171, 178, 191);&quot; class=&quot;token&quot;&gt;-&lt;/span&gt; NotificacionEnviada&lt;br/&gt;&lt;span style=&quot;color: rgb(171, 178, 191);&quot; class=&quot;token&quot;&gt;-&lt;/span&gt; IrregularidadDetectada&lt;br/&gt;&lt;span style=&quot;color: rgb(171, 178, 191);&quot; class=&quot;token&quot;&gt;-&lt;/span&gt; LinkBloqueado&lt;br/&gt;&lt;span style=&quot;color: rgb(171, 178, 191);&quot; class=&quot;token&quot;&gt;-&lt;/span&gt; ReporteGenerado&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="189" y="450" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-15" value="&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;align=left;" vertex="1" parent="1">
+          <mxGeometry x="449" y="410" width="220" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-16" value="USUARIOS Y ACCESOS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="464" y="380" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-17" value="&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(171, 178, 191);&quot; class=&quot;token&quot;&gt;-&lt;/span&gt; UsuarioRegistrado&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(171, 178, 191);&quot; class=&quot;token&quot;&gt;-&lt;/span&gt; RolAsignado&lt;br/&gt;&lt;span style=&quot;color: rgb(171, 178, 191);&quot; class=&quot;token&quot;&gt;-&lt;/span&gt; PermisosConcedidos&lt;br/&gt;&lt;span style=&quot;color: rgb(171, 178, 191);&quot; class=&quot;token&quot;&gt;-&lt;/span&gt; SesionIniciada&lt;br/&gt;&lt;span style=&quot;color: rgb(171, 178, 191);&quot; class=&quot;token&quot;&gt;-&lt;/span&gt; TokenValidado&lt;br/&gt;&lt;span style=&quot;color: rgb(171, 178, 191);&quot; class=&quot;token&quot;&gt;-&lt;/span&gt; AccesoDenegado&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="479" y="450" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-18" value="Brainstorming de Eventos Crítico" style="text;whiteSpace=wrap;html=1;fontSize=15;align=center;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="289.5" y="40" width="249" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-19" value="Timeline y Flujos" style="text;whiteSpace=wrap;html=1;fontSize=15;align=center;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="296" y="720" width="236" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-21" target="9qLHovj2lsrHqXUO13M7-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-21" value="&lt;span style=&quot;text-align: left;&quot;&gt;TorneoCreado&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-22" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;FLUJO 1: Creación Torneo Pago&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="760" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-23" target="9qLHovj2lsrHqXUO13M7-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-23" value="&lt;span style=&quot;text-align: left;&quot;&gt;CategoriaAsignada&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="209" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-24" target="9qLHovj2lsrHqXUO13M7-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-24" value="&lt;span style=&quot;text-align: left;&quot;&gt;EtapaVentaCreada&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="359" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-25" target="9qLHovj2lsrHqXUO13M7-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-25" value="&lt;span style=&quot;text-align: left;&quot;&gt;TicketGenerado&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="509" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-26" target="9qLHovj2lsrHqXUO13M7-27">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="719" y="870" />
+              <mxPoint x="189" y="870" />
+              <mxPoint x="189" y="920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-26" value="&lt;span style=&quot;text-align: left;&quot;&gt;VentaIniciada&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="659" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-27" target="9qLHovj2lsrHqXUO13M7-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-27" value="&lt;span style=&quot;text-align: left;&quot;&gt;PagoProcessado&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="209" y="890" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-28" target="9qLHovj2lsrHqXUO13M7-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-28" value="&lt;span style=&quot;text-align: left;&quot;&gt;ComisionCalculada&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="359" y="890" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-29" value="&lt;span style=&quot;text-align: left;&quot;&gt;Participante&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;text-align: left;&quot;&gt;Registrado&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="509" y="890" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-54" target="9qLHovj2lsrHqXUO13M7-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-54" value="&lt;span style=&quot;text-align: left;&quot;&gt;TorneoCreado&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="59.5" y="1010" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-55" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;FLUJO 2: Torneo Gratuito&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="59.5" y="980" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-57" target="9qLHovj2lsrHqXUO13M7-59">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-57" value="&lt;span style=&quot;text-align: left;&quot;&gt;LimiteParticipantes&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;text-align: left;&quot;&gt;Definido&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="208.5" y="1010" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-59" target="9qLHovj2lsrHqXUO13M7-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-59" value="&lt;span style=&quot;text-align: left;&quot;&gt;Participante&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;text-align: left;&quot;&gt;Registrado&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="358.5" y="1010" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-61" target="9qLHovj2lsrHqXUO13M7-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-61" value="&lt;span style=&quot;text-align: left;&quot;&gt;CapacidadLimite&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;text-align: left;&quot;&gt;Alcanzada&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="508.5" y="1010" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-63" value="&lt;span style=&quot;text-align: left;&quot;&gt;RegistrosCerrados&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="658.5" y="1010" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-70" target="9qLHovj2lsrHqXUO13M7-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-70" value="&lt;span style=&quot;text-align: left;&quot;&gt;VistaCreada&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="59.5" y="1140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-71" value="FLUJO 3: Vista Streaming" style="text;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="59.5" y="1110" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-73" target="9qLHovj2lsrHqXUO13M7-75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-73" value="&lt;span style=&quot;text-align: left;&quot;&gt;PlataformaIntegrada&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="208.5" y="1140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-75" target="9qLHovj2lsrHqXUO13M7-77">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-75" value="&lt;span style=&quot;text-align: left;&quot;&gt;TransmisionIniciada&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="358.5" y="1140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-77" target="9qLHovj2lsrHqXUO13M7-79">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-77" value="&lt;span style=&quot;text-align: left;&quot;&gt;EspectadorUnido&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="508.5" y="1140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-79" target="9qLHovj2lsrHqXUO13M7-81">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="719" y="1220" />
+              <mxPoint x="419" y="1220" />
+            </Array>
+            <mxPoint x="285" y="1260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-79" value="&lt;span style=&quot;text-align: left;&quot;&gt;CapacidadLimite&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;text-align: left;&quot;&gt;Alcanzada&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="658.5" y="1140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-81" value="&lt;span style=&quot;text-align: left;&quot;&gt;EspectadorRechazado&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="359" y="1240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-86" target="9qLHovj2lsrHqXUO13M7-89">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-86" value="&lt;span style=&quot;text-align: left;&quot;&gt;MetricaRegistrada&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-87" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;FLUJO 4: Monitoreo y Control&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="1310" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-88" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-89" target="9qLHovj2lsrHqXUO13M7-91">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-89" value="&lt;span style=&quot;text-align: left;&quot;&gt;UmbralSuperado&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="209" y="1340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-91" target="9qLHovj2lsrHqXUO13M7-93">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-91" value="&lt;span style=&quot;text-align: left;&quot;&gt;AlertaGenerada&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="359" y="1340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9qLHovj2lsrHqXUO13M7-93" target="9qLHovj2lsrHqXUO13M7-94">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-93" value="&lt;span style=&quot;text-align: left;&quot;&gt;NotificacionEnviada&amp;nbsp;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="509" y="1340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-94" value="&lt;span style=&quot;text-align: left;&quot;&gt;AccionCorrectiva&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;text-align: left;&quot;&gt;Tomada&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="659" y="1340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-97" value="Actores y Comandos" style="text;whiteSpace=wrap;html=1;fontSize=15;align=center;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="281" y="1490" width="236" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-113" value="&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;align=left;" vertex="1" parent="1">
+          <mxGeometry x="19" y="1560" width="161" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-114" value="ORGANIZADOR" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="12" y="1530" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-115" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="215" y="1560" width="171" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-116" value="PARTICIPANTE&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="208.5" y="1530" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-117" value="&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;/blockquote&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;align=left;" vertex="1" parent="1">
+          <mxGeometry x="423.5" y="1560" width="161" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-118" value="&lt;span style=&quot;text-align: left;&quot;&gt;ESPECTADOR&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="409" y="1530" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-119" value="&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- CrearTorneo&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px; font-size: 12px;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- AsignarResponsable&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px; font-size: 12px;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- ConfigurarLimites&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px; font-size: 12px;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- CrearEtapaVenta&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px; font-size: 12px;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- GenerarReporte&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="33.5" y="1570" width="146" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-120" value="&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- RegistrarseEnTorneo&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px; font-size: 12px;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- ComprarTicket&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px; font-size: 12px;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- AccederTransmision&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px; font-size: 12px;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- ValidarCodigoQR&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="235.5" y="1575" width="136" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-121" value="- UnirseAVista&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;- PagarTransmision&lt;br style=&quot;padding: 0px; margin: 0px;&quot;&gt;- VerStreamingGratuito" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="438.5" y="1570" width="146" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-122" value="&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;align=left;" vertex="1" parent="1">
+          <mxGeometry x="622.5" y="1560" width="186" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-123" value="&lt;span style=&quot;text-align: left;&quot;&gt;SISTEMA&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="620" y="1530" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9qLHovj2lsrHqXUO13M7-124" value="&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- ValidarCapacidad&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px; font-size: 12px;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- CalcularComision&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px; font-size: 12px;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- GenerarMetricas&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px; font-size: 12px;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- DetectarIrregularidades&lt;/span&gt;&lt;br style=&quot;padding: 0px; margin: 0px; font-size: 12px;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;- BloquearAcceso&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="642" y="1570" width="146" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

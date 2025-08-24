@@ -1,0 +1,175 @@
+@startuml ContextMapTorneosESports
+
+!theme aws-orange
+skinparam backgroundColor #FAFAFA
+skinparam defaultFontSize 12
+skinparam packageBackgroundColor #E8F4FD
+skinparam packageBorderColor #1E88E5
+skinparam arrowColor #424242
+skinparam arrowFontColor #1976D2
+skinparam arrowFontSize 10
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 60
+
+title Context Map - Plataforma Torneos E-Sports\nArquitectura DDD
+
+' Definición de contextos con colores específicos
+package "Gestión de Torneos" as GT #E3F2FD {
+  [Torneo] as T
+  [Categoria] as CAT
+  [TipoJuego] as TJ
+  [Organizador] as ORG
+  [Participante] as PART
+  [SubAdministrador] as SUBADM
+  
+  note right of T
+    **Raíz de Agregado**
+    Reglas de Negocio:
+    • Mín 1 categoría
+    • Máx 2 subadmin
+    • Límites por tipo
+  end note
+}
+
+package "Ticketing y Ventas" as TV #E8F5E8 {
+  [Ticket] as TIC
+  [Venta] as VEN
+  [CodigoQR] as QR
+  [Comision] as COM
+  [EtapaVenta] as EV
+  
+  note right of TIC
+    **Raíz de Agregado**
+    • QR único por ticket
+    • Comisiones automáticas
+    • Etapas con precios
+  end note
+}
+
+package "Streaming y Vistas" as SV #FFF3E0 {
+  [VistaTorneo] as VT
+  [Plataforma] as PLAT
+  [Espectador] as ESP
+  [Transmision] as TRANS
+  
+  note right of VT
+    **Raíz de Agregado**
+    • 1 evento gratuito/usuario
+    • Límite espectadores
+    • Multi-plataforma
+  end note
+}
+
+package "Gestión de Usuarios" as GU #F3E5F5 {
+  [Usuario] as USU
+  [Rol] as ROL
+  [Permiso] as PERM
+  [Sesion] as SES
+  
+  note right of USU
+    **Servicio Host Abierto**
+    • API pública
+    • JWT tokens
+    • Roles granulares
+  end note
+}
+
+package "Monitoreo y Análisis" as MON #FFEBEE {
+  [Metrica] as MET
+  [Reporte] as REP
+  [Alerta] as ALERT
+  [Dashboard] as DASH
+  
+  note right of MET
+    **Capa Anti-Corrupción**
+    • Métricas tiempo real
+    • Alertas configurables
+    • Reportes automáticos
+  end note
+}
+
+package "Sistema de Notificaciones" as NOT #F1F8E9 {
+  [Notificacion] as NOTIF
+  [Mensaje] as MSG
+  [Canal] as CANAL
+  
+  note right of NOTIF
+    **Downstream Consumer**
+    • Multi-canal
+    • Por rol personalizado
+    • Control spam
+  end note
+}
+
+' Capa Anti-Corrupción explícita
+rectangle "Anti-Corruption Layer" as ACL #FFCDD2 {
+  [EventTranslator] as ETRANS
+  [MetricMapper] as MMAP
+}
+
+' Posicionamiento manual de contextos
+GT -right-> TV : <<**Customer/Supplier**>>\n"TorneoCreado → Auto-ticket"
+
+GT -down-> SV : <<**Partnership**>>\n"TorneoId, FechaEvento"
+SV -up-> GT : <<**Partnership**>>\n"Métricas Vista"
+
+' Open Host Service - Usuario como servicio central en la parte superior
+GU -down-> GT : <<**Open Host**>>\nAPI Usuarios
+GU -down-> TV : <<**Open Host**>>\nValidación  
+GU -down-> SV : <<**Open Host**>>\nPermisos
+
+' Anti-Corruption Layer con líneas directas
+GT -down-> ACL : "Eventos\nDominio"
+TV -down-> ACL : "Eventos\nVenta"  
+SV -down-> ACL : "Eventos\nStream"
+GU -down-> ACL : "Eventos\nUsuario"
+
+ACL -down-> MON : <<**Anti-Corruption**>>\nEventos → Métricas
+
+' Published Language con líneas más limpias
+GT -down-> NOT : <<**Published Language**>>\n"TorneoCreado"
+TV -down-> NOT : <<**Published Language**>>\n"VentaCompletada"
+MON -down-> NOT : <<**Published Language**>>\n"AlertaGenerada"
+
+' Eventos publicados por cada contexto
+note top of GT
+  **Eventos Publicados:**
+  • TorneoCreado
+  • ParticipanteRegistrado
+  • TorneoIniciado
+  • TorneoFinalizado
+end note
+
+note top of TV
+  **Eventos Publicados:**
+  • TicketGenerado
+  • VentaCompletada
+  • ComisionCalculada
+end note
+
+note top of SV
+  **Eventos Publicados:**
+  • VistaCreada
+  • TransmisionIniciada
+  • EspectadorUnido
+  • CapacidadAlcanzada
+end note
+
+' Leyenda de patrones
+legend bottom
+  **Patrones de Integración DDD:**
+  • **Customer/Supplier:** Relación upstream/downstream con contrato
+  • **Partnership:** Colaboración mutua con desarrollo coordinado
+  • **Open Host Service:** API pública bien definida para múltiples consumidores
+  • **Anti-Corruption Layer:** Traductor que protege el modelo interno
+  • **Published Language:** Eventos bien definidos para consumidores downstream
+  
+  **Colores por Responsabilidad:**
+  • Azul: Contextos Core de Negocio
+  • Verde: Contextos de Soporte
+  • Naranja: Contextos de Infraestructura
+  • Rosa: Capas de Integración
+end legend
+
+@enduml

@@ -1,0 +1,224 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FAFAFA
+skinparam classBackgroundColor #FFFFFF
+skinparam classBorderColor #1976D2
+skinparam packageBackgroundColor #E3F2FD
+skinparam linetype ortho
+
+title Modelo de Dominio - Contexto Torneos\nArquitectura DDD
+
+' AGGREGATE ROOT
+class Torneo {
+  - id: TorneoId
+  - nombre: NombreTorneo
+  - categoria: Categoria
+  - tipoJuego: TipoJuego
+  - organizadorId: UsuarioId
+  - participantes: Participante[]
+  - subAdministradores: UsuarioId[]
+  - estado: EstadoTorneo
+  - limiteParticipantes: LimiteParticipantes
+  - fechaCreacion: FechaHora
+  --
+  + agregarParticipante(participante)
+  + agregarSubAdministrador(usuarioId)
+  + iniciarTorneo()
+  + finalizarTorneo()
+}
+
+' ENTITIES
+class Participante {
+  - id: ParticipanteId
+  - usuarioId: UsuarioId
+  - fechaRegistro: FechaHora
+  - estado: EstadoParticipante
+  --
+  + confirmarParticipacion()
+  + cancelarParticipacion()
+}
+
+class Categoria {
+  - id: CategoriaId
+  - descripcion: string
+  - alias: string
+  - estaActiva: boolean
+  --
+  + activar()
+  + desactivar()
+}
+
+class TipoJuego {
+  - id: TipoJuegoId
+  - nombreCompleto: string
+  - cantidadJugadores: CantidadJugadores
+  --
+  + actualizarCantidadJugadores()
+}
+
+' VALUE OBJECTS
+class TorneoId {
+  - valor: string
+  --
+  + equals(otro: TorneoId): boolean
+}
+
+class NombreTorneo {
+  - valor: string
+  --
+  + validar(): void
+}
+
+class LimiteParticipantes {
+  - valor: number
+  --
+  + seAlcanzo(cantidadActual): boolean
+}
+
+class UsuarioId {
+  - valor: string
+  --
+  + equals(otro: UsuarioId): boolean
+}
+
+class ParticipanteId {
+  - valor: string
+}
+
+class FechaHora {
+  - valor: Date
+  --
+  + esPosteriorA(otra): boolean
+}
+
+class CategoriaId {
+  - valor: string
+}
+
+class TipoJuegoId {
+  - valor: string
+}
+
+class CantidadJugadores {
+  - valor: number
+  --
+  + validar(): void
+}
+
+' ENUMS
+enum EstadoTorneo {
+  BORRADOR
+  ABIERTO_REGISTRO
+  REGISTRO_CERRADO
+  EN_PROGRESO
+  FINALIZADO
+  CANCELADO
+}
+
+enum EstadoParticipante {
+  REGISTRADO
+  CONFIRMADO
+  CANCELADO
+  DESCALIFICADO
+}
+
+' DOMAIN SERVICES
+class ServicioValidacionTorneo {
+  --
+  + {static} validarCreacionTorneo(torneo, categoria, tipoJuego)
+  + {static} puedeIniciarTorneo(torneo): boolean
+}
+
+class ServicioRegistroParticipante {
+  --
+  + {static} puedeUsuarioRegistrarse(usuarioId, torneo): boolean
+  + {static} validarPeriodoRegistro(torneo): boolean
+}
+
+' DOMAIN EVENTS
+class TorneoCreado {
+  - torneoId: TorneoId
+  - organizadorId: UsuarioId
+  - fechaOcurrencia: FechaHora
+}
+
+class ParticipanteRegistrado {
+  - torneoId: TorneoId
+  - participanteId: ParticipanteId
+  - fechaOcurrencia: FechaHora
+}
+
+class TorneoIniciado {
+  - torneoId: TorneoId
+  - cantidadParticipantes: number
+  - fechaOcurrencia: FechaHora
+}
+
+' REPOSITORY
+interface IRepositorioTorneo {
+  --
+  + guardar(torneo: Torneo): Promise<void>
+  + buscarPorId(id: TorneoId): Promise<Torneo>
+  + buscarPorOrganizador(organizadorId): Promise<Torneo[]>
+}
+
+' RELATIONSHIPS - Aggregate
+Torneo *-- "0..*" Participante : contiene
+Torneo --> Categoria : referencia
+Torneo --> TipoJuego : referencia
+
+' RELATIONSHIPS - Value Objects
+Torneo --> TorneoId
+Torneo --> NombreTorneo
+Torneo --> LimiteParticipantes
+Torneo --> UsuarioId
+Torneo --> FechaHora
+Torneo --> EstadoTorneo
+
+Participante --> ParticipanteId
+Participante --> UsuarioId
+Participante --> FechaHora
+Participante --> EstadoParticipante
+
+Categoria --> CategoriaId
+TipoJuego --> TipoJuegoId
+TipoJuego --> CantidadJugadores
+
+' RELATIONSHIPS - Domain Services
+ServicioValidacionTorneo ..> Torneo : valida
+ServicioValidacionTorneo ..> Categoria : valida
+ServicioValidacionTorneo ..> TipoJuego : valida
+
+ServicioRegistroParticipante ..> Torneo : valida
+ServicioRegistroParticipante ..> UsuarioId : valida
+
+' RELATIONSHIPS - Events
+Torneo ..> TorneoCreado : publica
+Torneo ..> ParticipanteRegistrado : publica
+Torneo ..> TorneoIniciado : publica
+
+' RELATIONSHIPS - Repository
+IRepositorioTorneo ..> Torneo : gestiona
+
+' NOTES
+note top of Torneo
+**RAÍZ DE AGREGADO**
+Gestiona ciclo de vida completo del torneo
+Mantiene consistencia de reglas de negocio
+end note
+
+note right of ServicioValidacionTorneo
+**REGLAS DE DOMINIO:**
+• Categoría debe estar activa
+• Tipo de juego compatible con límite
+• Máximo 2 subadministradores
+• Mínimo 2 participantes para iniciar
+end note
+
+note bottom of EstadoTorneo
+**FLUJO DE ESTADOS:**
+BORRADOR → ABIERTO_REGISTRO → 
+REGISTRO_CERRADO → EN_PROGRESO → 
+FINALIZADO
+end note
+@enduml
