@@ -48,7 +48,7 @@ describe('CategoriaId Value Object', () => {
 
     it('debe rechazar formatos inválidos', () => {
       const idsInvalidos = [
-        'X', // Muy corto
+        'X', // Muy corto (1 caracter)
         'CATEGORIA-EN-MAYUSCULAS', // Mayúsculas no permitidas
         'cat@invalid', // Caracteres especiales
         'cat con espacios' // Espacios
