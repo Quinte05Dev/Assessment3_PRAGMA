@@ -57,5 +57,7 @@
     "steps": "tests/bdd/steps",
     "support": "tests/bdd/support",
     "reports": "reports"
-  }
+  },
+  "author": "",
+  "license": "ISC"
 }
