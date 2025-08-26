@@ -1,0 +1,12 @@
+IAM
+
+Detalles de inicio de sesión en la consola
+Instrucciones de inicio de sesión por correo electrónico
+URL de inicio de sesión de la consola
+https://279205476043.signin.aws.amazon.com/console
+
+Nombre de usuario
+tournament-developer
+
+Contraseña de la consola
+Qwert12345
