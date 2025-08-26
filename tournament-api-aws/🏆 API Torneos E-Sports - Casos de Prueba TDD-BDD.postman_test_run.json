@@ -1,0 +1,799 @@
+{
+	"id": "084f6620-1cba-4590-aff0-72379ee8dd4f",
+	"name": "🏆 API Torneos E-Sports - Casos de Prueba TDD/BDD",
+	"timestamp": "2025-08-26T17:40:08.146Z",
+	"collection_id": "32694931-ec296659-e71c-4dfe-b248-db0cb71c5cc1",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 20,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-08-26T17:39:59.951Z",
+	"totalFail": 22,
+	"results": [
+		{
+			"id": "b055874f-8097-4c8f-b795-82b77a20a9b8",
+			"name": "1️⃣ Listar Categorías Disponibles",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/categorias",
+			"time": 749,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status 200": true,
+				"Response structure": false
+			},
+			"testPassFailCounts": {
+				"Status 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response structure": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				749
+			],
+			"allTests": [
+				{
+					"Status 200": true,
+					"Response structure": false
+				}
+			]
+		},
+		{
+			"id": "558b2663-d4cf-4f27-bc3e-8463d172d536",
+			"name": "2️⃣ Crear Torneo Válido",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
+			"time": 781,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status 201": true,
+				"Torneo created": false
+			},
+			"testPassFailCounts": {
+				"Status 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Torneo created": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				781
+			],
+			"allTests": [
+				{
+					"Status 201": true,
+					"Torneo created": false
+				}
+			]
+		},
+		{
+			"id": "52e3b15e-2fd6-4369-8e6d-88596f2ee847",
+			"name": "3️⃣ Obtener Torneo por ID",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos/",
+			"time": 655,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status 200": true,
+				"Torneo details": false
+			},
+			"testPassFailCounts": {
+				"Status 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Torneo details": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				655
+			],
+			"allTests": [
+				{
+					"Status 200": true,
+					"Torneo details": false
+				}
+			]
+		},
+		{
+			"id": "77f35dc1-2fd5-4efc-900b-8a2738e05e5f",
+			"name": "4️⃣ Listar Mis Torneos",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos?userId=test-organizador-id",
+			"time": 393,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status 200": true,
+				"Tournaments list": false
+			},
+			"testPassFailCounts": {
+				"Status 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Tournaments list": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				393
+			],
+			"allTests": [
+				{
+					"Status 200": true,
+					"Tournaments list": false
+				}
+			]
+		},
+		{
+			"id": "470ca4e6-3ac7-40e8-8032-617d7a0531c6",
+			"name": "5️⃣ Actualizar Límite de Participantes",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos/",
+			"time": 84,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status 200": false,
+				"Tournament updated": false
+			},
+			"testPassFailCounts": {
+				"Status 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Tournament updated": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				84
+			],
+			"allTests": [
+				{
+					"Status 200": false,
+					"Tournament updated": false
+				}
+			]
+		},
+		{
+			"id": "5392694d-4836-45eb-a4c7-cfe56a62b360",
+			"name": "6️⃣ Cancelar Torneo",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos/",
+			"time": 84,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status 200": false,
+				"Tournament cancelled": false
+			},
+			"testPassFailCounts": {
+				"Status 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Tournament cancelled": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				84
+			],
+			"allTests": [
+				{
+					"Status 200": false,
+					"Tournament cancelled": false
+				}
+			]
+		},
+		{
+			"id": "9098786e-c9f0-43fb-a5da-66cce3860efc",
+			"name": "❌ Nombre Muy Corto (< 3 chars)",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
+			"time": 253,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status 400": true,
+				"Domain validation error": true
+			},
+			"testPassFailCounts": {
+				"Status 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Domain validation error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				253
+			],
+			"allTests": [
+				{
+					"Status 400": true,
+					"Domain validation error": true
+				}
+			]
+		},
+		{
+			"id": "83c8dd38-8eca-4c05-8e6c-3175d2758e4b",
+			"name": "❌ Nombre Muy Largo (> 100 chars)",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
+			"time": 108,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status 400": true,
+				"Domain validation error": true
+			},
+			"testPassFailCounts": {
+				"Status 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Domain validation error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				108
+			],
+			"allTests": [
+				{
+					"Status 400": true,
+					"Domain validation error": true
+				}
+			]
+		},
+		{
+			"id": "7d677761-052b-412d-b733-32b9c5150c4f",
+			"name": "❌ Contenido Prohibido en Nombre",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
+			"time": 172,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status 400": true,
+				"Spam filter error": false
+			},
+			"testPassFailCounts": {
+				"Status 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Spam filter error": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Status 400": true,
+					"Spam filter error": false
+				}
+			]
+		},
+		{
+			"id": "f1482409-41bd-4942-98ad-6e2ea3991eb2",
+			"name": "❌ Categoría Inactiva",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
+			"time": 283,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status 400": true,
+				"Business rule error": true
+			},
+			"testPassFailCounts": {
+				"Status 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Business rule error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				283
+			],
+			"allTests": [
+				{
+					"Status 400": true,
+					"Business rule error": true
+				}
+			]
+		},
+		{
+			"id": "73023420-b6aa-4fa3-9e09-eb4395e1bc88",
+			"name": "❌ Límite Muy Bajo (< 2 participantes)",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
+			"time": 235,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status 400": true,
+				"Limit validation error": false
+			},
+			"testPassFailCounts": {
+				"Status 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Limit validation error": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				235
+			],
+			"allTests": [
+				{
+					"Status 400": true,
+					"Limit validation error": false
+				}
+			]
+		},
+		{
+			"id": "bdce1a65-8be9-4232-a243-e8e6ca327533",
+			"name": "❌ Límite Muy Alto (> 1000 participantes)",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
+			"time": 120,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status 400": true,
+				"Limit validation error": false
+			},
+			"testPassFailCounts": {
+				"Status 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Limit validation error": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				120
+			],
+			"allTests": [
+				{
+					"Status 400": true,
+					"Limit validation error": false
+				}
+			]
+		},
+		{
+			"id": "17bc20ee-a5e4-4a3b-8477-c223e700ab65",
+			"name": "❌ Categoría No Encontrada",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
+			"time": 155,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status 404": true,
+				"Category not found": true
+			},
+			"testPassFailCounts": {
+				"Status 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Category not found": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				155
+			],
+			"allTests": [
+				{
+					"Status 404": true,
+					"Category not found": true
+				}
+			]
+		},
+		{
+			"id": "e9a8c024-91dc-414a-9f5d-9bacb0c1d13d",
+			"name": "❌ JSON Malformado",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
+			"time": 234,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status 400": false,
+				"JSON parse error": false
+			},
+			"testPassFailCounts": {
+				"Status 400": {
+					"pass": 0,
+					"fail": 1
+				},
+				"JSON parse error": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				234
+			],
+			"allTests": [
+				{
+					"Status 400": false,
+					"JSON parse error": false
+				}
+			]
+		},
+		{
+			"id": "415d1e8b-a7aa-4a18-8380-35fcaa216b95",
+			"name": "❌ Campo Requerido Faltante",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
+			"time": 235,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status 400": true,
+				"Required field error": true
+			},
+			"testPassFailCounts": {
+				"Status 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Required field error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				235
+			],
+			"allTests": [
+				{
+					"Status 400": true,
+					"Required field error": true
+				}
+			]
+		},
+		{
+			"id": "ca2ecaa5-e341-4c25-a105-62ec6263d159",
+			"name": "❌ Tipo de Datos Incorrecto",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
+			"time": 235,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status 400": true,
+				"Type validation error": true
+			},
+			"testPassFailCounts": {
+				"Status 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Type validation error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				235
+			],
+			"allTests": [
+				{
+					"Status 400": true,
+					"Type validation error": true
+				}
+			]
+		},
+		{
+			"id": "f7936470-bbad-4c7a-a6cb-f802221b8325",
+			"name": "❌ Torneo No Encontrado",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos/00000000-0000-0000-0000-000000000000",
+			"time": 668,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status 404": false,
+				"Not found error": false
+			},
+			"testPassFailCounts": {
+				"Status 404": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Not found error": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				668
+			],
+			"allTests": [
+				{
+					"Status 404": false,
+					"Not found error": false
+				}
+			]
+		},
+		{
+			"id": "713ba3f0-2b23-4b74-a4b2-024228b6f121",
+			"name": "❌ UUID Inválido",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos/invalid-uuid",
+			"time": 243,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status 400": true,
+				"Invalid UUID error": false
+			},
+			"testPassFailCounts": {
+				"Status 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Invalid UUID error": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				243
+			],
+			"allTests": [
+				{
+					"Status 400": true,
+					"Invalid UUID error": false
+				}
+			]
+		},
+		{
+			"id": "d2af60ee-00a6-4a19-a03b-0e38b7cce3fa",
+			"name": "❌ Filtro Estado Inválido",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos?estado=ESTADO_INEXISTENTE&userId=test-organizador-id",
+			"time": 259,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status 400": false,
+				"Invalid state error": false
+			},
+			"testPassFailCounts": {
+				"Status 400": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Invalid state error": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				259
+			],
+			"allTests": [
+				{
+					"Status 400": false,
+					"Invalid state error": false
+				}
+			]
+		},
+		{
+			"id": "53f7837b-9844-463a-bcea-b7e840e95731",
+			"name": "❌ Actualizar Torneo Cancelado",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos/",
+			"time": 219,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status 400": false,
+				"Cannot modify cancelled tournament": false
+			},
+			"testPassFailCounts": {
+				"Status 400": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Cannot modify cancelled tournament": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				219
+			],
+			"allTests": [
+				{
+					"Status 400": false,
+					"Cannot modify cancelled tournament": false
+				}
+			]
+		},
+		{
+			"id": "37f4eb0f-2933-4995-9cc2-41c9fb57b211",
+			"name": "🔄 Cancelar Torneo Ya Cancelado (Idempotente)",
+			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos/",
+			"time": 87,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status 200": false,
+				"Idempotent operation": false
+			},
+			"testPassFailCounts": {
+				"Status 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Idempotent operation": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				87
+			],
+			"allTests": [
+				{
+					"Status 200": false,
+					"Idempotent operation": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 6252,
+	"collection": {
+		"requests": [
+			{
+				"id": "b055874f-8097-4c8f-b795-82b77a20a9b8",
+				"method": "GET"
+			},
+			{
+				"id": "558b2663-d4cf-4f27-bc3e-8463d172d536",
+				"method": "POST"
+			},
+			{
+				"id": "52e3b15e-2fd6-4369-8e6d-88596f2ee847",
+				"method": "GET"
+			},
+			{
+				"id": "77f35dc1-2fd5-4efc-900b-8a2738e05e5f",
+				"method": "GET"
+			},
+			{
+				"id": "470ca4e6-3ac7-40e8-8032-617d7a0531c6",
+				"method": "PUT"
+			},
+			{
+				"id": "5392694d-4836-45eb-a4c7-cfe56a62b360",
+				"method": "DELETE"
+			},
+			{
+				"id": "9098786e-c9f0-43fb-a5da-66cce3860efc",
+				"method": "POST"
+			},
+			{
+				"id": "83c8dd38-8eca-4c05-8e6c-3175d2758e4b",
+				"method": "POST"
+			},
+			{
+				"id": "7d677761-052b-412d-b733-32b9c5150c4f",
+				"method": "POST"
+			},
+			{
+				"id": "f1482409-41bd-4942-98ad-6e2ea3991eb2",
+				"method": "POST"
+			},
+			{
+				"id": "73023420-b6aa-4fa3-9e09-eb4395e1bc88",
+				"method": "POST"
+			},
+			{
+				"id": "bdce1a65-8be9-4232-a243-e8e6ca327533",
+				"method": "POST"
+			},
+			{
+				"id": "17bc20ee-a5e4-4a3b-8477-c223e700ab65",
+				"method": "POST"
+			},
+			{
+				"id": "e9a8c024-91dc-414a-9f5d-9bacb0c1d13d",
+				"method": "POST"
+			},
+			{
+				"id": "415d1e8b-a7aa-4a18-8380-35fcaa216b95",
+				"method": "POST"
+			},
+			{
+				"id": "ca2ecaa5-e341-4c25-a105-62ec6263d159",
+				"method": "POST"
+			},
+			{
+				"id": "f7936470-bbad-4c7a-a6cb-f802221b8325",
+				"method": "GET"
+			},
+			{
+				"id": "713ba3f0-2b23-4b74-a4b2-024228b6f121",
+				"method": "GET"
+			},
+			{
+				"id": "d2af60ee-00a6-4a19-a03b-0e38b7cce3fa",
+				"method": "GET"
+			},
+			{
+				"id": "53f7837b-9844-463a-bcea-b7e840e95731",
+				"method": "PUT"
+			},
+			{
+				"id": "37f4eb0f-2933-4995-9cc2-41c9fb57b211",
+				"method": "DELETE"
+			}
+		]
+	}
+}

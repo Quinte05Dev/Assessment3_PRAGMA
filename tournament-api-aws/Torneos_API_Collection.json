@@ -1,0 +1,816 @@
+{
+	"info": {
+		"_postman_id": "tournament-api-collection",
+		"name": "🏆 API Torneos E-Sports - Casos de Prueba TDD/BDD",
+		"description": "Colección completa que valida todas las reglas del dominio desarrollado con TDD/BDD.\n\n**Variables necesarias:**\n- `baseUrl`: https://al1i6z4zq7.execute-api.us-east-1.amazonaws.com/dev\n- `torneoId`: Se auto-asigna al crear torneos\n\n**Orden de ejecución:**\n1. ✅ Casos Exitosos (200-201)\n2. 🔴 Casos de Error - Validaciones Dominio\n3. 🔴 Casos de Error - Recursos\n4. 🔴 Casos Edge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "✅ CASOS EXITOSOS",
+			"item": [
+				{
+					"name": "1️⃣ Listar Categorías Disponibles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 200', () => pm.response.to.have.status(200));",
+									"pm.test('Response structure', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.true;",
+									"    pm.expect(json.data.categorias).to.be.an('array');",
+									"    pm.expect(json.data.total).to.be.a('number');",
+									"    json.data.categorias.forEach(cat => {",
+									"        pm.expect(cat.id).to.be.a('string');",
+									"        pm.expect(cat.descripcion).to.be.a('string');",
+									"        pm.expect(cat.alias).to.be.a('string');",
+									"        pm.expect(cat.estaActiva).to.be.a('boolean');",
+									"    });",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/categorias",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "categorias"]
+						}
+					}
+				},
+				{
+					"name": "2️⃣ Crear Torneo Válido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 201', () => pm.response.to.have.status(201));",
+									"pm.test('Torneo created', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.true;",
+									"    pm.expect(json.data.torneoId).to.be.a('string');",
+									"    pm.expect(json.data.estado).to.equal('BORRADOR');",
+									"    pm.expect(json.data.nombre).to.equal('Copa de Verano 2024');",
+									"    pm.expect(json.data.organizadorId).to.equal('test-organizador-id');",
+									"    pm.collectionVariables.set('torneoId', json.data.torneoId);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Copa de Verano 2024\",\n  \"categoriaId\": \"cat-profesional-001\",\n  \"limiteParticipantes\": 32,\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"]
+						}
+					}
+				},
+				{
+					"name": "3️⃣ Obtener Torneo por ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 200', () => pm.response.to.have.status(200));",
+									"pm.test('Torneo details', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.true;",
+									"    pm.expect(json.data.torneoId).to.be.a('string');",
+									"    pm.expect(json.data.estado).to.be.a('string');",
+									"    pm.expect(json.data.nombre).to.be.a('string');",
+									"    pm.expect(json.data.categoria).to.be.an('object');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos/{{torneoId}}",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos", "{{torneoId}}"]
+						}
+					}
+				},
+				{
+					"name": "4️⃣ Listar Mis Torneos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 200', () => pm.response.to.have.status(200));",
+									"pm.test('Tournaments list', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.true;",
+									"    pm.expect(json.data.torneos).to.be.an('array');",
+									"    pm.expect(json.data.total).to.be.a('number');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos?userId=test-organizador-id",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"],
+							"query": [
+								{
+									"key": "userId",
+									"value": "test-organizador-id"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "5️⃣ Actualizar Límite de Participantes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 200', () => pm.response.to.have.status(200));",
+									"pm.test('Tournament updated', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.true;",
+									"    pm.expect(json.data.limiteParticipantes).to.equal(64);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"limiteParticipantes\": 64,\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos/{{torneoId}}",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos", "{{torneoId}}"]
+						}
+					}
+				},
+				{
+					"name": "6️⃣ Cancelar Torneo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 200', () => pm.response.to.have.status(200));",
+									"pm.test('Tournament cancelled', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.true;",
+									"    pm.expect(json.data.estado).to.equal('CANCELADO');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"razon\": \"Problemas técnicos\",\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos/{{torneoId}}",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos", "{{torneoId}}"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "🔴 CASOS DE ERROR - VALIDACIONES DOMINIO",
+			"item": [
+				{
+					"name": "❌ Nombre Muy Corto (< 3 chars)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 400', () => pm.response.to.have.status(400));",
+									"pm.test('Domain validation error', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('nombre');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Ab\",\n  \"categoriaId\": \"cat-profesional-001\",\n  \"limiteParticipantes\": 32,\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"]
+						}
+					}
+				},
+				{
+					"name": "❌ Nombre Muy Largo (> 100 chars)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 400', () => pm.response.to.have.status(400));",
+									"pm.test('Domain validation error', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('nombre');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"This is a very long tournament name that exceeds the maximum length limit of one hundred characters to test the validation rule\",\n  \"categoriaId\": \"cat-profesional-001\",\n  \"limiteParticipantes\": 32,\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"]
+						}
+					}
+				},
+				{
+					"name": "❌ Contenido Prohibido en Nombre",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 400', () => pm.response.to.have.status(400));",
+									"pm.test('Spam filter error', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('prohibido');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Torneo con palabra prohibida: spam\",\n  \"categoriaId\": \"cat-profesional-001\",\n  \"limiteParticipantes\": 32,\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"]
+						}
+					}
+				},
+				{
+					"name": "❌ Categoría Inactiva",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 400', () => pm.response.to.have.status(400));",
+									"pm.test('Business rule error', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('inactiva');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Torneo Válido\",\n  \"categoriaId\": \"cat-inactiva-001\",\n  \"limiteParticipantes\": 32,\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"]
+						}
+					}
+				},
+				{
+					"name": "❌ Límite Muy Bajo (< 2 participantes)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 400', () => pm.response.to.have.status(400));",
+									"pm.test('Limit validation error', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('límite');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Torneo Válido\",\n  \"categoriaId\": \"cat-profesional-001\",\n  \"limiteParticipantes\": 1,\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"]
+						}
+					}
+				},
+				{
+					"name": "❌ Límite Muy Alto (> 1000 participantes)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 400', () => pm.response.to.have.status(400));",
+									"pm.test('Limit validation error', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('límite');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Torneo Válido\",\n  \"categoriaId\": \"cat-profesional-001\",\n  \"limiteParticipantes\": 1001,\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "🔴 CASOS DE ERROR - RECURSOS",
+			"item": [
+				{
+					"name": "❌ Categoría No Encontrada",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 404', () => pm.response.to.have.status(404));",
+									"pm.test('Category not found', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('Categoría');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Torneo Válido\",\n  \"categoriaId\": \"cat-no-existe-001\",\n  \"limiteParticipantes\": 32,\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"]
+						}
+					}
+				},
+				{
+					"name": "❌ JSON Malformado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 400', () => pm.response.to.have.status(400));",
+									"pm.test('JSON parse error', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('JSON');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ invalid json }"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"]
+						}
+					}
+				},
+				{
+					"name": "❌ Campo Requerido Faltante",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 400', () => pm.response.to.have.status(400));",
+									"pm.test('Required field error', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('requerido');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"categoriaId\": \"cat-profesional-001\",\n  \"limiteParticipantes\": 32,\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"]
+						}
+					}
+				},
+				{
+					"name": "❌ Tipo de Datos Incorrecto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 400', () => pm.response.to.have.status(400));",
+									"pm.test('Type validation error', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('tipo');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Torneo Válido\",\n  \"categoriaId\": \"cat-profesional-001\",\n  \"limiteParticipantes\": \"treinta y dos\",\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"]
+						}
+					}
+				},
+				{
+					"name": "❌ Torneo No Encontrado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 404', () => pm.response.to.have.status(404));",
+									"pm.test('Not found error', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('no encontrado');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos/00000000-0000-0000-0000-000000000000",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos", "00000000-0000-0000-0000-000000000000"]
+						}
+					}
+				},
+				{
+					"name": "❌ UUID Inválido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 400', () => pm.response.to.have.status(400));",
+									"pm.test('Invalid UUID error', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('UUID');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos/invalid-uuid",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos", "invalid-uuid"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "🔴 CASOS EDGE",
+			"item": [
+				{
+					"name": "❌ Filtro Estado Inválido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 400', () => pm.response.to.have.status(400));",
+									"pm.test('Invalid state error', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('estado');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos?estado=ESTADO_INEXISTENTE&userId=test-organizador-id",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"],
+							"query": [
+								{
+									"key": "estado",
+									"value": "ESTADO_INEXISTENTE"
+								},
+								{
+									"key": "userId",
+									"value": "test-organizador-id"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "❌ Actualizar Torneo Cancelado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 400', () => pm.response.to.have.status(400));",
+									"pm.test('Cannot modify cancelled tournament', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.false;",
+									"    pm.expect(json.error.message).to.include('No se puede actualizar un torneo en estado CANCELADO');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"limiteParticipantes\": 50,\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos/{{torneoId}}",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos", "{{torneoId}}"]
+						}
+					}
+				},
+				{
+					"name": "🔄 Cancelar Torneo Ya Cancelado (Idempotente)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 200', () => pm.response.to.have.status(200));",
+									"pm.test('Idempotent operation', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json.success).to.be.true;",
+									"    pm.expect(json.data.estado).to.equal('CANCELADO');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"razon\": \"Segundo intento de cancelación\",\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos/{{torneoId}}",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos", "{{torneoId}}"]
+						}
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log('torneoId actual:', pm.collectionVariables.get('torneoId'));"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://al1i6z4zq7.execute-api.us-east-1.amazonaws.com/dev",
+			"type": "string"
+		},
+		{
+			"key": "torneoId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

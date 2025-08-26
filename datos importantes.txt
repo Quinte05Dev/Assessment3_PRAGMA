@@ -10,3 +10,73 @@ tournament-developer
 
 Contraseña de la consola
 Qwert12345
+
+
+
+Clave de acceso
+AKIAUCAPRO3FYQMIRDTO
+
+Clave de acceso secreta
+vvvc+rEZR8FqG4uTpKvKOS4ocBf+b9JNiOxk6plK
+
+
+
+CloudFormation outputs from deployed stack
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------   
+Outputs
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------   
+Key                 UserPoolClientId
+Description         Cognito User Pool Client ID
+Value               2744oc7b3iujri5vtd4auidpjr
+
+Key                 ApiUrl
+Description         API Gateway endpoint URL
+Value               https://r5foe3tjhj.execute-api.us-east-1.amazonaws.com/dev
+
+Key                 UserPoolId
+Description         Cognito User Pool ID
+Value               us-east-1_EhALv0X4c
+
+Key                 ApiId
+Description         API Gateway ID
+Value               r5foe3tjhj
+
+API_URL=https://r5foe3tjhj.execute-api.us-east-1.amazonaws.com/dev
+USER_POOL_ID=us-east-1_EhALv0X4c
+CLIENT_ID=2744oc7b3iujri5vtd4auidpjr
+
+aws cognito-idp admin-create-user --user-pool-id $UserPoolId --username "organizador@test.com" --user-attributes Name=email,Value=organizador@test.com Name=given_name,Value=Juan Name=family_name,Value=Perez --temporary-password "TempPass123!" --message-action SUPPRESS
+
+aws cognito-idp admin-set-user-password --user-pool-id $UserPoolId --username "organizador@test.com" --password "Qwert12345" --permanente
+
+sam validate
+sam build
+Remove-Item -Recurse -Force .aws-sam
+sam deploy
+
+
+
+CloudFormation outputs from deployed stack
+---------------------------------------------------------------------------------------------------------------------
+Outputs
+---------------------------------------------------------------------------------------------------------------------
+Key                 UserPoolClientId
+Description         Cognito User Pool Client ID
+Value               2744oc7b3iujri5vtd4auidpjr
+
+Key                 ApiUrl
+Description         API Gateway endpoint URL
+Value               https://r5foe3tjhj.execute-api.us-east-1.amazonaws.com/dev
+
+Key                 UserPoolId
+Description         Cognito User Pool ID
+Value               us-east-1_EhALv0X4c
+
+Key                 ApiId
+Description         API Gateway ID
+Value               r5foe3tjhj
+
+
+aws cognito-idp admin-create-user --user-pool-id $UserPoolId --username "organizador@test.com" --user-attributes Name=email,Value=organizador@test.com Name=given_name,Value=Juan Name=family_name,Value=Perez --temporary-password "TempPass123!" --message-action SUPPRESS
+
+aws cognito-idp admin-set-user-password --user-pool-id $UserPoolId --username "organizador@test.com" --password "Qwert12345" --permanent

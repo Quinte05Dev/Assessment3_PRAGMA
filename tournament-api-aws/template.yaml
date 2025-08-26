@@ -1,0 +1,202 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: API de Torneos E-Sports - Implementación con DDD/TDD
+
+# ========== PARAMETERS ==========
+Parameters:
+  Stage:
+    Type: String
+    Default: dev
+    Description: Stage name for deployment
+    AllowedValues: [dev, staging, prod]
+
+# ========== GLOBALS ==========
+Globals:
+  Function:
+    Timeout: 30
+    Runtime: nodejs18.x
+    MemorySize: 256
+    Environment:
+      Variables:
+        NODE_PATH: ./src
+        LOG_LEVEL: DEBUG
+        STAGE: !Ref Stage
+
+# ========== RESOURCES ==========
+Resources:
+  # ========== API GATEWAY ==========
+  TorneoApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: !Sub "torneo-api-${Stage}"
+      StageName: !Ref Stage
+      Cors:
+        AllowMethods: "'GET,POST,PUT,DELETE,OPTIONS'"
+        AllowHeaders: "'Content-Type,X-Amz-Date,X-Api-Key,X-Amz-Security-Token'"
+        AllowOrigin: "'*'"
+
+  # ========== LAMBDA FUNCTIONS ==========
+  CrearTorneoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: handlers/torneos/crearTorneo.handler
+      Runtime: nodejs18.x
+      Events:
+        CrearTorneo:
+          Type: Api
+          Properties:
+            Path: /api/torneos
+            Method: POST
+            RestApiId: !Ref TorneoApi
+            Auth:
+              AuthorizationType: NONE
+      Environment:
+        Variables:
+          LOG_LEVEL: DEBUG
+
+  ObtenerTorneoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: handlers/torneos/obtenerTorneo.handler
+      Runtime: nodejs18.x
+      Events:
+        ObtenerTorneo:
+          Type: Api
+          Properties:
+            Path: /api/torneos/{id}
+            Method: GET
+            RestApiId: !Ref TorneoApi
+            Auth:
+              AuthorizationType: NONE
+      Environment:
+        Variables:
+          LOG_LEVEL: DEBUG
+
+  ActualizarTorneoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: handlers/torneos/actualizarTorneo.handler
+      Runtime: nodejs18.x
+      Events:
+        ActualizarTorneo:
+          Type: Api
+          Properties:
+            Path: /api/torneos/{id}
+            Method: PUT
+            RestApiId: !Ref TorneoApi
+            Auth:
+              AuthorizationType: NONE
+      Environment:
+        Variables:
+          LOG_LEVEL: DEBUG
+
+  CancelarTorneoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: handlers/torneos/cancelarTorneo.handler
+      Runtime: nodejs18.x
+      Events:
+        CancelarTorneo:
+          Type: Api
+          Properties:
+            Path: /api/torneos/{id}
+            Method: DELETE
+            RestApiId: !Ref TorneoApi
+            Auth:
+              AuthorizationType: NONE
+      Environment:
+        Variables:
+          LOG_LEVEL: DEBUG
+
+  ListarTorneosFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: handlers/torneos/listarTorneos.handler
+      Runtime: nodejs18.x
+      Events:
+        ListarTorneos:
+          Type: Api
+          Properties:
+            Path: /api/torneos
+            Method: GET
+            RestApiId: !Ref TorneoApi
+            Auth:
+              AuthorizationType: NONE
+      Environment:
+        Variables:
+          LOG_LEVEL: DEBUG
+
+  ListarCategoriasFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: handlers/categorias/listarCategorias.handler
+      Runtime: nodejs18.x
+      Events:
+        ListarCategorias:
+          Type: Api
+          Properties:
+            Path: /api/categorias
+            Method: GET
+            RestApiId: !Ref TorneoApi
+            Auth:
+              AuthorizationType: NONE
+      Environment:
+        Variables:
+          LOG_LEVEL: DEBUG
+
+  # ========== CLOUDWATCH LOG GROUPS ==========
+  CrearTorneoLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/torneo-crear-${Stage}"
+      RetentionInDays: 14
+
+  ObtenerTorneoLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/torneo-obtener-${Stage}"
+      RetentionInDays: 14
+
+  ActualizarTorneoLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/torneo-actualizar-${Stage}"
+      RetentionInDays: 14
+
+  CancelarTorneoLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/torneo-cancelar-${Stage}"
+      RetentionInDays: 14
+
+  ListarTorneosLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/torneo-listar-${Stage}"
+      RetentionInDays: 14
+
+  ListarCategoriasLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/categorias-listar-${Stage}"
+      RetentionInDays: 14
+
+# ========== OUTPUTS ==========
+Outputs:
+  ApiUrl:
+    Description: "API Gateway endpoint URL"
+    Value: !Sub "https://${TorneoApi}.execute-api.${AWS::Region}.amazonaws.com/${Stage}"
+    Export:
+      Name: !Sub "${AWS::StackName}-api-url"
+
+  ApiId:
+    Description: "API Gateway ID"
+    Value: !Ref TorneoApi
+    Export:
+      Name: !Sub "${AWS::StackName}-api-id"

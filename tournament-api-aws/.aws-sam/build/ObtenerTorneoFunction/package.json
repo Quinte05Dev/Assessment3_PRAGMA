@@ -1,0 +1,14 @@
+{
+  "name": "tournament-api-lambda-functions",
+  "version": "1.0.0",
+  "description": "Lambda functions para la API de Torneos",
+  "main": "index.js",
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "jwks-rsa": "^3.0.1",
+    "uuid": "^9.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
