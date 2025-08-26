@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "tournament-api-collection",
+		"name": "API Torneos E-Sports - Casos de Prueba TDD/BDD",
+		"description": "Colección completa que valida todas las reglas del dominio desarrollado con TDD/BDD.\n\n**Variables necesarias:**\n- `baseUrl`: https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev\n- `torneoId`: Se auto-asigna al crear torneos\n\n**Orden de ejecución:**\n1. ✅ Casos Exitosos (200-201)\n2. 🔴 Casos de Error - Validaciones Dominio\n3. 🔴 Casos de Error - Recursos\n4. 🔴 Casos Edge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "✅ CASOS EXITOSOS",
+			"item": [
+				{
+					"name": "1️⃣ Listar Categorías Disponibles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 200', () => pm.response.to.have.status(200));",
+									"pm.test('Response structure', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json).to.have.property('success', true);",
+									"    pm.expect(json.data).to.be.an('object');",
+									"    pm.expect(json.data.categorias).to.be.an('array').that.is.not.empty;",
+									"    pm.expect(json.data.total).to.be.a('number');",
+									"    json.data.categorias.forEach(cat => {",
+									"        pm.expect(cat).to.have.property('id').that.is.a('string');",
+									"        pm.expect(cat).to.have.property('descripcion').that.is.a('string');",
+									"        pm.expect(cat).to.have.property('alias').that.is.a('string');",
+									"        pm.expect(cat).to.have.property('estaActiva').that.is.a('boolean');",
+									"    });",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/categorias",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "categorias"]
+						}
+					}
+				},
+				{
+					"name": "2️⃣ Crear Torneo Válido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 201', () => pm.response.to.have.status(201));",
+									"pm.test('Response structure', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json).to.have.property('success', true);",
+									"    pm.expect(json.data).to.be.an('object');",
+									"    pm.expect(json.data).to.have.property('torneoId').that.is.a('string');",
+									"    pm.expect(json.data).to.have.property('estado').that.equals('BORRADOR');",
+									"    pm.expect(json.data).to.have.property('nombre').that.equals('Copa de Verano 2024');",
+									"    pm.expect(json.data).to.have.property('organizadorId').that.equals('test-organizador-id');",
+									"    pm.collectionVariables.set('torneoId', json.data.torneoId);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Copa de Verano 2024\",\n  \"categoriaId\": \"cat-profesional-001\",\n  \"limiteParticipantes\": 32,\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos"]
+						}
+					}
+				},
+				{
+					"name": "3️⃣ Obtener Torneo por ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 200', () => pm.response.to.have.status(200));",
+									"pm.test('Response structure', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json).to.have.property('success', true);",
+									"    pm.expect(json.data).to.be.an('object');",
+									"    pm.expect(json.data).to.have.property('id').that.equals(pm.collectionVariables.get('torneoId'));",
+									"    pm.expect(json.data).to.have.property('nombre').that.equals('Copa de Verano 2024');",
+									"    pm.expect(json.data).to.have.property('estado').that.equals('BORRADOR');",
+									"    pm.expect(json.data).to.have.property('limiteParticipantes').that.equals(32);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos/{{torneoId}}",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos", "{{torneoId}}"]
+						}
+					}
+				},
+				{
+					"name": "4️⃣ Actualizar Límite de Participantes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 200', () => pm.response.to.have.status(200));",
+									"pm.test('Response structure', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json).to.have.property('success', true);",
+									"    pm.expect(json.data).to.be.an('object');",
+									"    pm.expect(json.data).to.have.property('limiteParticipantes').that.equals(64);",
+									"    pm.expect(json.data).to.have.property('id').that.equals(pm.collectionVariables.get('torneoId'));",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"limiteParticipantes\": 64,\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos/{{torneoId}}",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos", "{{torneoId}}"]
+						}
+					}
+				},
+				{
+					"name": "5️⃣ Cancelar Torneo (Idempotente)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status 200', () => pm.response.to.have.status(200));",
+									"pm.test('Idempotent operation', () => {",
+									"    const json = pm.response.json();",
+									"    pm.expect(json).to.have.property('success', true);",
+									"    pm.expect(json.data).to.be.an('object');",
+									"    pm.expect(json.data).to.have.property('estado').that.equals('CANCELADO');",
+									"    pm.expect(json.data).to.have.property('id').that.equals(pm.collectionVariables.get('torneoId'));",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"razon\": \"Problemas técnicos\",\n  \"organizadorId\": \"test-organizador-id\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/torneos/{{torneoId}}",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "torneos", "{{torneoId}}"]
+						}
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log('torneoId actual:', pm.collectionVariables.get('torneoId'));",
+					"if (!pm.collectionVariables.get('torneoId')) {",
+					"    pm.collectionVariables.set('torneoId', '');",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev",
+			"type": "string"
+		},
+		{
+			"key": "torneoId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

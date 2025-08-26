@@ -1,7 +1,7 @@
 {
-	"id": "084f6620-1cba-4590-aff0-72379ee8dd4f",
+	"id": "0207b0ae-ef76-42de-b23b-ee35af5b92e6",
 	"name": "🏆 API Torneos E-Sports - Casos de Prueba TDD/BDD",
-	"timestamp": "2025-08-26T17:40:08.146Z",
+	"timestamp": "2025-08-26T17:55:42.173Z",
 	"collection_id": "32694931-ec296659-e71c-4dfe-b248-db0cb71c5cc1",
 	"folder_id": 0,
 	"environment_id": "0",
@@ -9,14 +9,14 @@
 	"delay": 0,
 	"persist": true,
 	"status": "finished",
-	"startedAt": "2025-08-26T17:39:59.951Z",
+	"startedAt": "2025-08-26T17:55:34.373Z",
 	"totalFail": 22,
 	"results": [
 		{
 			"id": "b055874f-8097-4c8f-b795-82b77a20a9b8",
 			"name": "1️⃣ Listar Categorías Disponibles",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/categorias",
-			"time": 749,
+			"time": 789,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -36,7 +36,7 @@
 				}
 			},
 			"times": [
-				749
+				789
 			],
 			"allTests": [
 				{
@@ -49,7 +49,7 @@
 			"id": "558b2663-d4cf-4f27-bc3e-8463d172d536",
 			"name": "2️⃣ Crear Torneo Válido",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
-			"time": 781,
+			"time": 846,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -69,7 +69,7 @@
 				}
 			},
 			"times": [
-				781
+				846
 			],
 			"allTests": [
 				{
@@ -82,7 +82,7 @@
 			"id": "52e3b15e-2fd6-4369-8e6d-88596f2ee847",
 			"name": "3️⃣ Obtener Torneo por ID",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos/",
-			"time": 655,
+			"time": 778,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -102,7 +102,7 @@
 				}
 			},
 			"times": [
-				655
+				778
 			],
 			"allTests": [
 				{
@@ -115,7 +115,7 @@
 			"id": "77f35dc1-2fd5-4efc-900b-8a2738e05e5f",
 			"name": "4️⃣ Listar Mis Torneos",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos?userId=test-organizador-id",
-			"time": 393,
+			"time": 262,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -135,7 +135,7 @@
 				}
 			},
 			"times": [
-				393
+				262
 			],
 			"allTests": [
 				{
@@ -148,7 +148,7 @@
 			"id": "470ca4e6-3ac7-40e8-8032-617d7a0531c6",
 			"name": "5️⃣ Actualizar Límite de Participantes",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos/",
-			"time": 84,
+			"time": 85,
 			"responseCode": {
 				"code": 403,
 				"name": "Forbidden"
@@ -168,7 +168,7 @@
 				}
 			},
 			"times": [
-				84
+				85
 			],
 			"allTests": [
 				{
@@ -181,7 +181,7 @@
 			"id": "5392694d-4836-45eb-a4c7-cfe56a62b360",
 			"name": "6️⃣ Cancelar Torneo",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos/",
-			"time": 84,
+			"time": 86,
 			"responseCode": {
 				"code": 403,
 				"name": "Forbidden"
@@ -201,7 +201,7 @@
 				}
 			},
 			"times": [
-				84
+				86
 			],
 			"allTests": [
 				{
@@ -214,7 +214,7 @@
 			"id": "9098786e-c9f0-43fb-a5da-66cce3860efc",
 			"name": "❌ Nombre Muy Corto (< 3 chars)",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
-			"time": 253,
+			"time": 241,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -234,7 +234,7 @@
 				}
 			},
 			"times": [
-				253
+				241
 			],
 			"allTests": [
 				{
@@ -247,7 +247,7 @@
 			"id": "83c8dd38-8eca-4c05-8e6c-3175d2758e4b",
 			"name": "❌ Nombre Muy Largo (> 100 chars)",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
-			"time": 108,
+			"time": 103,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -267,7 +267,7 @@
 				}
 			},
 			"times": [
-				108
+				103
 			],
 			"allTests": [
 				{
@@ -280,7 +280,7 @@
 			"id": "7d677761-052b-412d-b733-32b9c5150c4f",
 			"name": "❌ Contenido Prohibido en Nombre",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
-			"time": 172,
+			"time": 176,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -300,7 +300,7 @@
 				}
 			},
 			"times": [
-				172
+				176
 			],
 			"allTests": [
 				{
@@ -313,7 +313,7 @@
 			"id": "f1482409-41bd-4942-98ad-6e2ea3991eb2",
 			"name": "❌ Categoría Inactiva",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
-			"time": 283,
+			"time": 159,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -333,7 +333,7 @@
 				}
 			},
 			"times": [
-				283
+				159
 			],
 			"allTests": [
 				{
@@ -346,7 +346,7 @@
 			"id": "73023420-b6aa-4fa3-9e09-eb4395e1bc88",
 			"name": "❌ Límite Muy Bajo (< 2 participantes)",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
-			"time": 235,
+			"time": 113,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -366,7 +366,7 @@
 				}
 			},
 			"times": [
-				235
+				113
 			],
 			"allTests": [
 				{
@@ -379,7 +379,7 @@
 			"id": "bdce1a65-8be9-4232-a243-e8e6ca327533",
 			"name": "❌ Límite Muy Alto (> 1000 participantes)",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
-			"time": 120,
+			"time": 238,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -399,7 +399,7 @@
 				}
 			},
 			"times": [
-				120
+				238
 			],
 			"allTests": [
 				{
@@ -412,7 +412,7 @@
 			"id": "17bc20ee-a5e4-4a3b-8477-c223e700ab65",
 			"name": "❌ Categoría No Encontrada",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
-			"time": 155,
+			"time": 153,
 			"responseCode": {
 				"code": 404,
 				"name": "Not Found"
@@ -432,7 +432,7 @@
 				}
 			},
 			"times": [
-				155
+				153
 			],
 			"allTests": [
 				{
@@ -445,7 +445,7 @@
 			"id": "e9a8c024-91dc-414a-9f5d-9bacb0c1d13d",
 			"name": "❌ JSON Malformado",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
-			"time": 234,
+			"time": 102,
 			"responseCode": {
 				"code": 500,
 				"name": "Internal Server Error"
@@ -465,7 +465,7 @@
 				}
 			},
 			"times": [
-				234
+				102
 			],
 			"allTests": [
 				{
@@ -478,7 +478,7 @@
 			"id": "415d1e8b-a7aa-4a18-8380-35fcaa216b95",
 			"name": "❌ Campo Requerido Faltante",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
-			"time": 235,
+			"time": 250,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -498,7 +498,7 @@
 				}
 			},
 			"times": [
-				235
+				250
 			],
 			"allTests": [
 				{
@@ -511,7 +511,7 @@
 			"id": "ca2ecaa5-e341-4c25-a105-62ec6263d159",
 			"name": "❌ Tipo de Datos Incorrecto",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos",
-			"time": 235,
+			"time": 102,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -531,7 +531,7 @@
 				}
 			},
 			"times": [
-				235
+				102
 			],
 			"allTests": [
 				{
@@ -544,7 +544,7 @@
 			"id": "f7936470-bbad-4c7a-a6cb-f802221b8325",
 			"name": "❌ Torneo No Encontrado",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos/00000000-0000-0000-0000-000000000000",
-			"time": 668,
+			"time": 631,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -564,7 +564,7 @@
 				}
 			},
 			"times": [
-				668
+				631
 			],
 			"allTests": [
 				{
@@ -577,7 +577,7 @@
 			"id": "713ba3f0-2b23-4b74-a4b2-024228b6f121",
 			"name": "❌ UUID Inválido",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos/invalid-uuid",
-			"time": 243,
+			"time": 233,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -597,7 +597,7 @@
 				}
 			},
 			"times": [
-				243
+				233
 			],
 			"allTests": [
 				{
@@ -610,7 +610,7 @@
 			"id": "d2af60ee-00a6-4a19-a03b-0e38b7cce3fa",
 			"name": "❌ Filtro Estado Inválido",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos?estado=ESTADO_INEXISTENTE&userId=test-organizador-id",
-			"time": 259,
+			"time": 254,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -630,7 +630,7 @@
 				}
 			},
 			"times": [
-				259
+				254
 			],
 			"allTests": [
 				{
@@ -676,7 +676,7 @@
 			"id": "37f4eb0f-2933-4995-9cc2-41c9fb57b211",
 			"name": "🔄 Cancelar Torneo Ya Cancelado (Idempotente)",
 			"url": "https://lwy106cbvj.execute-api.us-east-1.amazonaws.com/dev/api/torneos/",
-			"time": 87,
+			"time": 85,
 			"responseCode": {
 				"code": 403,
 				"name": "Forbidden"
@@ -696,7 +696,7 @@
 				}
 			},
 			"times": [
-				87
+				85
 			],
 			"allTests": [
 				{
@@ -707,7 +707,7 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 6252,
+	"totalTime": 5905,
 	"collection": {
 		"requests": [
 			{
